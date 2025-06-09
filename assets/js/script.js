@@ -12,7 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-// function runGame() {};
+
+/** The main game "loop", called when the script is fully loaded
+ * and after the user's answer ha been processed.
+ */
+
+function runGame() {
+  let num1 = Math.floor(Math.random() * 25) + 1;
+  let num2 = Math.floor(Math.random() * 25) + 1;
+}
 
 // function checkAnswer() {};
 
