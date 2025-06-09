@@ -22,13 +22,48 @@
     <title>Love Maths</title>
   </head>
   <body>
+    <!-- Header with Logo and Title -->
     <h1 class="heading">
       <img class="logo" src="assets/images/logo.png" alt="Logo" />
       Love Maths
     </h1>
 
-    <div class="game-area"></div>
+    <!-- Game Area: Controls - Questions -->
+    <div class="game-area">
+      <!-- Controls -->
+      <div class="controls-area">
+        <button class="btn btn--big btn--green">
+          <i class="fa-solid fa-plus"></i>
+        </button>
 
+        <button class="btn btn--big btn--blue">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button class="btn btn--big btn--orange">
+          <i class="fa-solid fa-times"></i>
+        </button>
+
+        <button class="btn btn--big btn--red">
+          <i class="fa-solid fa-divide"></i>
+        </button>
+      </div>
+
+      <!-- Questions -->
+      <div class="question-area">
+        <span id="operand1">0</span>
+        <span id="operator">x</span>
+        <span id="operand2">0</span>
+        <span>=</span>
+
+        <p class="answer-message">Enter Answer:</p>
+
+        <input type="number" id="answer-box" />
+      </div>
+      <button class="btn btn--gray">Submit Answer</button>
+    </div>
+
+    <!-- Scores Area -->
     <div class="score-area">
       <p class="scores">
         Correct Answers
