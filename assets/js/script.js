@@ -124,14 +124,12 @@ function displayAdditionQuestion(operand1, operand2) {
 
 /** Displays a subtraction question with the given operands. */
 function displaySubtractQuestion(operand1, operand2) {
+  if (operand1 < operand2) {
+    [operand1, operand2] = [operand2, operand1];
+  }
   document.getElementById('operand1').textContent = operand1;
   document.getElementById('operand2').textContent = operand2;
   document.getElementById('operator').textContent = '-';
-  if (operand1 < operand2) {
-    [operand1, operand2] = [operand2, operand1];
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
-  }
 }
 
 /** Displays a multiplication question with the given operands. */
