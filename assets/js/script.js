@@ -1,10 +1,12 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
   let buttons = document.getElementsByTagName('button');
 
   for (let button of buttons) {
     button.addEventListener('click', function () {
       if (this.getAttribute('data-type') === 'submit') {
-        alert('You clicked the submit button!');
+        checkAnswer();
       } else {
         let gameType = this.getAttribute('data-type');
         runGame(gameType);
@@ -34,9 +36,41 @@ function runGame(gameType) {
   }
 }
 
-// function checkAnswer() {};
+/** Checks the user's answer and, if it is incorrect, shows the correct result. */
 
-// function calculateCorrectAnswer() {};
+function checkAnswer() {
+  let userAnswer = parseInt(document.getElementById('answer-box').value);
+
+  if (isNaN(userAnswer)) {
+    alert('Please enter a valid number!');
+    return;
+  }
+
+  let calculatedAnswer = calculateCorrectAnswer();
+  let isCorrect = userAnswer === calculatedAnswer;
+
+  if (isCorrect) {
+    alert('Correct! :D');
+  } else {
+    alert(`Incorrect Answer! The result is not ${userAnswer}. The correct answer is ${calculatedAnswer} :(`);
+  }
+}
+
+/** Reads the operator ( + - * / ) and the numbers displayed on the screen
+ * and returns the correct result. */
+
+function calculateCorrectAnswer() {
+  let operand1 = parseInt(document.getElementById('operand1').textContent);
+  let operand2 = parseInt(document.getElementById('operand2').textContent);
+  let operator = document.getElementById('operator').textContent;
+
+  if (operator === '+') {
+    return operand1 + operand2;
+  } else {
+    alert(`Unimplemented operator ${operator}`);
+    throw `Unimplemented operator ${operator}. Aborting`;
+  }
+}
 
 // function incrementScore() {};
 
