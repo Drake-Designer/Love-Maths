@@ -96,10 +96,6 @@ function calculateCorrectAnswer() {
   } else if (operator === '*') {
     return operand1 * operand2;
   } else if (operator === '/') {
-    if (operand2 === 0) {
-      alert('Division by zero is not allowed!');
-      throw 'Division by zero. Aborting';
-    }
     return Math.floor(operand1 / operand2);
   } else {
     alert(`Unimplemented operator ${operator}`);
